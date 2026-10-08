@@ -134,7 +134,9 @@
 .hero-visual {
     position: relative;
 
-    min-height: 620px;
+    min-height: 560px;
+
+    padding-top: 50px;
 
     display: flex;
 
@@ -649,6 +651,7 @@
 
     .hero-visual {
         min-height: 440px;
+    padding-top: 35px;
     }
 
     .network-visual {
