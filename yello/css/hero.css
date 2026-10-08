@@ -1,0 +1,751 @@
+/* =========================================================
+   YELLÓ — HERO
+   DEEP AMETHYST / ORBIT NETWORK
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding: 145px 0 100px;
+
+    overflow: hidden;
+
+    color: #ffffff;
+
+    background:
+        radial-gradient(
+            circle at 75% 45%,
+            rgba(139, 78, 170, 0.25),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 95% 10%,
+            rgba(91, 40, 120, 0.22),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #160b20 0%,
+            #21102f 48%,
+            #2d1440 100%
+        );
+}
+
+/* =========================================================
+   HERO LAYOUT
+   ========================================================= */
+
+.hero .container {
+    min-height: calc(100vh - 145px);
+
+    display: grid;
+
+    grid-template-columns: 0.95fr 1.05fr;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+
+    z-index: 10;
+}
+
+.hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    margin-bottom: 24px;
+
+    color: #c9a9d8;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+}
+
+.hero-eyebrow::before {
+    content: "";
+
+    width: 28px;
+    height: 1px;
+
+    background: #aa78c2;
+}
+
+.hero-title {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size: clamp(54px, 6vw, 88px);
+
+    font-weight: 700;
+
+    line-height: 0.98;
+
+    letter-spacing: -0.055em;
+}
+
+.hero-title span {
+    color: #c9a9d8;
+}
+
+.hero-description {
+    max-width: 550px;
+
+    margin: 28px 0 0;
+
+    color: rgba(255, 255, 255, 0.70);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    margin-top: 36px;
+}
+
+/* =========================================================
+   HERO VISUAL
+   ========================================================= */
+
+.hero-visual {
+    position: relative;
+
+    min-height: 620px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.network-visual {
+    position: relative;
+
+    width: 560px;
+    height: 560px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    animation:
+        networkFloat 6s ease-in-out infinite;
+}
+
+/* =========================================================
+   ATMOSPHERIC GLOW
+   ========================================================= */
+
+.network-visual::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(139, 78, 170, 0.20),
+            rgba(91, 40, 120, 0.07) 48%,
+            transparent 72%
+        );
+
+    filter: blur(12px);
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   MAIN ORBIT RING
+   ========================================================= */
+
+.network-visual::after {
+    content: "";
+
+    position: absolute;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(201, 169, 216, 0.20);
+
+    box-shadow:
+        0 0 70px rgba(113, 52, 147, 0.10),
+        inset 0 0 50px rgba(113, 52, 147, 0.04);
+
+    animation:
+        orbitRing 18s linear infinite;
+
+    pointer-events: none;
+}
+
+/* =========================================================
+   ORBIT LINES
+   ========================================================= */
+
+.network-line {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 235px;
+    height: 1px;
+
+    transform-origin: left center;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(201, 169, 216, 0.35),
+            rgba(201, 169, 216, 0.02)
+        );
+
+    pointer-events: none;
+}
+
+.line-one {
+    transform:
+        translateY(-50%)
+        rotate(0deg);
+}
+
+.line-two {
+    transform:
+        translateY(-50%)
+        rotate(120deg);
+}
+
+.line-three {
+    transform:
+        translateY(-50%)
+        rotate(240deg);
+}
+
+/* =========================================================
+   CENTRAL Y
+   ========================================================= */
+
+.network-center {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 128px;
+    height: 128px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    color: #ffffff;
+
+    font-size: 54px;
+    font-weight: 700;
+
+    letter-spacing: -0.08em;
+
+    background:
+        radial-gradient(
+            circle at 35% 30%,
+            #8b4eaa,
+            #5b2878 48%,
+            #321446 100%
+        );
+
+    border:
+        1px solid rgba(201, 169, 216, 0.30);
+
+    box-shadow:
+        0 0 0 12px rgba(113, 52, 147, 0.06),
+        0 0 60px rgba(113, 52, 147, 0.30),
+        0 20px 60px rgba(0, 0, 0, 0.30);
+
+    z-index: 6;
+}
+
+/* =========================================================
+   PROFILE CARDS
+   ========================================================= */
+
+.network-card {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 190px;
+    min-height: 94px;
+
+    padding: 17px 18px;
+
+    display: flex;
+
+    flex-direction: column;
+    justify-content: center;
+
+    color: #000000;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(239, 216, 255, 0.97),
+            rgba(152, 128, 170, 0.98)
+        );
+
+    border:
+        1px solid rgba(201, 169, 216, 0.18);
+    
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.28);
+
+    overflow: hidden;
+
+    z-index: 5;
+
+    transition:
+        opacity 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease;
+}
+
+/* =========================================================
+   CARD HIGHLIGHT
+   ========================================================= */
+
+.network-card::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -50%;
+
+    background:
+        radial-gradient(
+            circle at var(--spot-x, 50%) var(--spot-y, 50%),
+            rgba(233, 185, 255, 0.28),
+            transparent 30%
+        );
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        opacity 250ms ease;
+}
+
+.network-card:hover::before {
+    opacity: 1;
+}
+
+.network-card:hover {
+    border-color:
+        rgba(201, 169, 216, 0.40);
+
+    box-shadow:
+        0 22px 55px rgba(91, 40, 120, 0.36),
+        0 0 35px rgba(139, 78, 170, 0.15);
+}
+
+.network-card.is-dimmed {
+    opacity: 0.45;
+}
+
+.network-card.is-active {
+    opacity: 1;
+
+    z-index: 20;
+}
+
+/* =========================================================
+   CARD TEXT
+   ========================================================= */
+
+.network-card h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0 0 6px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+.network-card p {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.58);
+
+    font-size: 11px;
+
+    line-height: 1.45;
+}
+.network-card-role,.network-match,.network-intent {
+    color:#36233d
+}
+
+
+/* =========================================================
+   ORBIT POSITIONS
+   ========================================================= */
+
+.card-one {
+    transform:
+        translate(-50%, -50%)
+        rotate(0deg)
+        translateX(235px)
+        rotate(0deg);
+
+    animation:
+        orbitCardOne 18s linear infinite;
+}
+
+.card-two {
+    transform:
+        translate(-50%, -50%)
+        rotate(120deg)
+        translateX(235px)
+        rotate(-120deg);
+
+    animation:
+        orbitCardTwo 18s linear infinite;
+}
+
+.card-three {
+    transform:
+        translate(-50%, -50%)
+        rotate(240deg)
+        translateX(235px)
+        rotate(-240deg);
+
+    animation:
+        orbitCardThree 18s linear infinite;
+}
+
+/* =========================================================
+   ORBIT ANIMATIONS
+   ========================================================= */
+
+@keyframes orbitCardOne {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(0deg)
+            translateX(235px)
+            rotate(0deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(360deg)
+            translateX(235px)
+            rotate(-360deg);
+    }
+}
+
+@keyframes orbitCardTwo {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(120deg)
+            translateX(235px)
+            rotate(-120deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(480deg)
+            translateX(235px)
+            rotate(-480deg);
+    }
+}
+
+@keyframes orbitCardThree {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            rotate(240deg)
+            translateX(235px)
+            rotate(-240deg);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            rotate(600deg)
+            translateX(235px)
+            rotate(-600deg);
+    }
+}
+
+/* =========================================================
+   ORBIT RING
+   ========================================================= */
+
+@keyframes orbitRing {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================================
+   GENTLE FLOAT
+   ========================================================= */
+
+@keyframes networkFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* =========================================================
+   SCROLL INDICATOR
+   ========================================================= */
+
+.hero-scroll {
+    position: absolute;
+
+    left: 50%;
+    bottom: 28px;
+
+    transform: translateX(-50%);
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    color: rgba(255, 255, 255, 0.42);
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+}
+
+.hero-scroll::after {
+    content: "";
+
+    width: 30px;
+    height: 1px;
+
+    background: rgba(201, 169, 216, 0.35);
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero .container {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    .hero-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-description {
+        max-width: 650px;
+    }
+
+    .hero-visual {
+        min-height: 560px;
+    }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .hero {
+        padding-top: 120px;
+        padding-bottom: 80px;
+    }
+
+    .hero-title {
+        font-size: clamp(44px, 12vw, 64px);
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-visual {
+        min-height: 440px;
+    }
+
+    .network-visual {
+        width: 390px;
+        height: 390px;
+    }
+
+    .network-visual::after {
+        width: 290px;
+        height: 290px;
+    }
+
+    .network-card {
+        width: 145px;
+        min-height: 76px;
+
+        padding: 12px;
+    }
+
+    .network-center {
+        width: 94px;
+        height: 94px;
+
+        font-size: 40px;
+    }
+
+    .network-line {
+        width: 145px;
+    }
+
+    @keyframes orbitCardOne {
+
+        from {
+            transform:
+                translate(-50%, -50%)
+                rotate(0deg)
+                translateX(145px)
+                rotate(0deg);
+        }
+
+        to {
+            transform:
+                translate(-50%, -50%)
+                rotate(360deg)
+                translateX(145px)
+                rotate(-360deg);
+        }
+    }
+
+    @keyframes orbitCardTwo {
+
+        from {
+            transform:
+                translate(-50%, -50%)
+                rotate(120deg)
+                translateX(145px)
+                rotate(-120deg);
+        }
+
+        to {
+            transform:
+                translate(-50%, -50%)
+                rotate(480deg)
+                translateX(145px)
+                rotate(-480deg);
+        }
+    }
+
+    @keyframes orbitCardThree {
+
+        from {
+            transform:
+                translate(-50%, -50%)
+                rotate(240deg)
+                translateX(145px)
+                rotate(-240deg);
+        }
+
+        to {
+            transform:
+                translate(-50%, -50%)
+                rotate(600deg)
+                translateX(145px)
+                rotate(-600deg);
+        }
+    }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .network-visual,
+    .network-visual::after,
+    .network-card {
+        animation: none !important;
+    }
+}

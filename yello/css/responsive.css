@@ -1,0 +1,537 @@
+/* =========================================
+   YELLÓ — RESPONSIVE SYSTEM
+   ========================================= */
+
+
+/* =========================================
+   LARGE TABLETS / SMALL LAPTOPS
+   ========================================= */
+
+@media (max-width: 1100px) {
+
+    :root {
+        --section-padding: 100px;
+    }
+
+    .container {
+        width: min(
+            calc(100% - 40px),
+            var(--container-width)
+        );
+    }
+
+    .hero .container {
+        gap: 45px;
+    }
+
+    .hero-title {
+        font-size: clamp(52px, 7vw, 78px);
+    }
+
+    .hero-visual {
+        transform: scale(0.94);
+        transform-origin: center;
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 900px) {
+
+    :root {
+        --section-padding: 90px;
+    }
+
+    .container {
+        width: min(
+            calc(100% - 36px),
+            var(--container-width)
+        );
+    }
+
+    /* Navbar */
+
+    .navbar-links {
+        gap: 22px;
+    }
+
+    .navbar-actions {
+        gap: 6px;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding-top: 125px;
+    }
+
+    .hero .container {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .hero-content {
+        max-width: 760px;
+    }
+
+    .hero-visual {
+        width: 100%;
+        min-height: 500px;
+
+        transform: none;
+    }
+
+    .network-visual {
+        min-height: 500px;
+    }
+
+    /* Why */
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .why-card {
+        min-height: 250px;
+    }
+
+    /* Journey */
+
+    .journey {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-track {
+        display: none;
+    }
+
+    /* Discover */
+
+    .discover-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-card {
+        min-height: 240px;
+    }
+}
+
+
+/* =========================================
+   MOBILE NAVIGATION
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 70px;
+    }
+
+    .navbar.scrolled {
+        height: 64px;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-login {
+        display: none;
+    }
+
+    .navbar-actions {
+        margin-left: auto;
+    }
+
+    .navbar-menu {
+        display: inline-flex;
+    }
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+
+        padding-top: 120px;
+        padding-bottom: 70px;
+    }
+
+    .hero-title {
+        font-size: clamp(
+            48px,
+            14vw,
+            70px
+        );
+    }
+
+    .hero-description {
+        max-width: 100%;
+
+        font-size: 15px;
+        line-height: 1.7;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+    }
+
+    /* Hero visual */
+
+    .hero-visual {
+        min-height: 430px;
+
+        margin-top: 15px;
+    }
+
+    .network-visual {
+        min-height: 430px;
+    }
+
+    .network-card {
+        width: 175px;
+    }
+
+    .network-card.card-one {
+        left: 0;
+        top: 5%;
+    }
+
+    .network-card.card-two {
+        right: 0;
+        top: 24%;
+    }
+
+    .network-card.card-three {
+        right: 2%;
+        bottom: 2%;
+    }
+
+    .network-center {
+        width: 105px;
+        height: 105px;
+
+        font-size: 43px;
+    }
+
+    .network-line {
+        display: none;
+    }
+
+    .hero-visual::before,
+    .hero-visual::after {
+        display: none;
+    }
+
+    /* Sections */
+
+    .why-section,
+    .how-section,
+    .discover-section,
+    .cta-section {
+        padding-top: 85px;
+        padding-bottom: 85px;
+    }
+
+    .why-header,
+    .how-header {
+        margin-bottom: 55px;
+    }
+
+    .section-title {
+        font-size: clamp(
+            36px,
+            10vw,
+            52px
+        );
+    }
+
+    .section-description {
+        font-size: 15px;
+    }
+
+    /* Why cards */
+
+    .why-card {
+        min-height: 260px;
+
+        padding: 26px;
+    }
+
+    .why-card-content {
+        margin-top: 55px;
+    }
+
+    /* Journey */
+
+    .journey {
+        gap: 45px;
+    }
+
+    .journey-step {
+        display: grid;
+
+        grid-template-columns:
+            60px minmax(0, 1fr);
+
+        column-gap: 18px;
+
+        text-align: left;
+    }
+
+    .journey-node {
+        width: 60px;
+        height: 60px;
+
+        grid-row: span 2;
+
+        margin: 0;
+    }
+
+    .journey-step h3 {
+        padding-top: 4px;
+    }
+
+    .journey-step p {
+        max-width: none;
+
+        margin: 7px 0 0;
+    }
+
+    /* Discover */
+
+    .intent-popup {
+        max-width: 100%;
+    }
+
+    .discover-grid {
+        gap: 14px;
+    }
+
+    .profile-card {
+        min-height: 230px;
+
+        padding: 22px;
+    }
+
+    /* CTA */
+
+    .cta-actions {
+        flex-direction: column;
+
+        width: 100%;
+        max-width: 300px;
+
+        margin-inline: auto;
+    }
+
+    .cta-actions .btn {
+        width: 100%;
+    }
+
+    .cta-panel {
+        padding: 45px 24px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+   ========================================= */
+
+@media (max-width: 430px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .navbar-logo {
+        font-size: 22px;
+    }
+
+    .navbar-join {
+        min-height: 38px;
+
+        padding-inline: 14px;
+
+        font-size: 11px;
+    }
+
+    /* Hero */
+
+    .hero {
+        padding-top: 112px;
+    }
+
+    .hero-title {
+        font-size: 46px;
+    }
+
+    .hero-description {
+        font-size: 14px;
+    }
+
+    .hero-visual {
+        min-height: 390px;
+    }
+
+    .network-visual {
+        min-height: 390px;
+    }
+
+    .network-card {
+        width: 155px;
+
+        padding: 12px;
+    }
+
+    .network-card-name {
+        font-size: 11px;
+    }
+
+    .network-card-role,
+    .network-intent {
+        font-size: 9px;
+    }
+
+    .network-avatar {
+        width: 34px;
+        height: 34px;
+
+        font-size: 11px;
+    }
+
+    .network-match {
+        margin-top: 10px;
+
+        padding: 5px 8px;
+
+        font-size: 9px;
+    }
+
+    .network-center {
+        width: 88px;
+        height: 88px;
+
+        font-size: 36px;
+    }
+
+    /* Sections */
+
+    .why-section,
+    .how-section,
+    .discover-section,
+    .cta-section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
+    .section-title {
+        font-size: 35px;
+    }
+
+    .why-card {
+        min-height: 235px;
+
+        padding: 22px;
+    }
+
+    .why-card h3 {
+        font-size: 19px;
+    }
+
+    .why-card p {
+        font-size: 13px;
+    }
+
+    .journey-step {
+        grid-template-columns: 52px 1fr;
+    }
+
+    .journey-node {
+        width: 52px;
+        height: 52px;
+
+        font-size: 12px;
+    }
+
+    .profile-card {
+        min-height: 215px;
+
+        padding: 20px;
+    }
+
+    .profile-card h3 {
+        font-size: 18px;
+    }
+
+    .profile-intent {
+        font-size: 12px;
+    }
+
+    .match-score {
+        top: 18px;
+        right: 18px;
+
+        font-size: 10px;
+    }
+}
+
+
+/* =========================================
+   TOUCH DEVICES
+   ========================================= */
+
+/*
+   Disable heavy cursor-driven effects on
+   touch devices. This prevents awkward
+   movement while scrolling on phones.
+*/
+
+@media (hover: none) and (pointer: coarse) {
+
+    [data-tilt] {
+        transform: none !important;
+    }
+
+    [data-tilt]:hover {
+        transform: none !important;
+    }
+
+    .network-card:hover {
+        transform: none;
+    }
+
+    .profile-card:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition-duration: 0.01ms !important;
+    }
+}

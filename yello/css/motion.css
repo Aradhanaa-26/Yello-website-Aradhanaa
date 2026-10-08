@@ -1,0 +1,72 @@
+/* =========================================================
+   MOTION SYSTEM
+   ========================================================= */
+
+[data-stagger] > * {
+    opacity: 0;
+
+    transform: translateY(28px);
+
+    transition:
+        opacity 700ms var(--ease),
+        transform 700ms var(--ease);
+}
+
+[data-stagger].visible > * {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   REVEAL VARIATIONS
+   ========================================================= */
+
+.reveal-left {
+    opacity: 0;
+
+    transform: translateX(-35px);
+
+    transition:
+        opacity 700ms var(--ease),
+        transform 700ms var(--ease);
+}
+
+.reveal-left.visible {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+.reveal-right {
+    opacity: 0;
+
+    transform: translateX(35px);
+
+    transition:
+        opacity 700ms var(--ease),
+        transform 700ms var(--ease);
+}
+
+.reveal-right.visible {
+    opacity: 1;
+
+    transform: translateX(0);
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+.reduced-motion *,
+.reduced-motion *::before,
+.reduced-motion *::after {
+    animation: none !important;
+
+    transition-duration: 0.01ms !important;
+
+    scroll-behavior: auto !important;
+}
